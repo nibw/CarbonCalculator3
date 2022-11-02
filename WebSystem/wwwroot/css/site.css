@@ -1,0 +1,241 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  /*margin-bottom: 60px;*/
+}
+/*footer*/
+.footer {
+    /*position: absolute;*/
+    bottom: 0;
+    flex: 0 0 50px; /*or 50px*/
+    width: 100%;
+    /*white-space: nowrap;*/
+    /*line-height: 60px;*/ /* Vertically center the text there */
+    margin-top: auto;
+}
+
+.footer-colour {
+    background-color: #000000
+}
+
+.footer-paragraph p {
+    margin-bottom: 0px;
+}
+
+.social-icon-list {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding-top: 10px;
+}
+
+    .social-icon-list ul {
+        margin: 0px;
+        padding: 0px;
+        /*text-align: center;*/
+    }
+
+        .social-icon-list ul li {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            /*text-align: center;*/
+            background: grey;
+            border-radius: 100%;
+        }
+
+            .social-icon-list ul li a {
+                display: block;
+                color: #fff;
+                font-size: 20px;
+                text-align: center;
+            }
+
+                .social-icon-list ul li a i {
+                    line-height: 100%;
+                }
+
+menu-list ol, ul {
+    padding-left: 0px;
+}
+
+.menu-list ul li {
+    display: block;
+}
+
+    .menu-list ul li a {
+        text-decoration: none;
+    }
+
+.menu-list-2 {
+    padding-top: 1.8rem;
+}
+
+.WhiteFont ul li a {
+    color: #ffffff;
+}
+
+    .WhiteFont ul li a:hover {
+        color: darkgrey;
+    }
+
+/*Beranda*/
+.main-menu-box {
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+}
+
+.flex-item {
+    background-color: darkgrey;
+    padding: 10px;
+    flex: 100%;
+    text-align: left;
+    margin-top: 100px;
+}
+
+.p1 {
+    font-size: 65px;
+    color: #ABC437;
+    margin-bottom: -15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+    .user-info h3 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .user-info p {
+        font-size: 12px;
+    }
+
+    .user-info img {
+        width: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+.dropdown-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.dropdown-header {
+    padding: 0px;
+}
+
+/*.dropdown-menu {
+    transition: max-height 0.5s;
+}*/
+
+.dropdown-menu.show {
+    /*background-color: rgba(153, 153, 153, 0.8);*/
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.imgCol {
+    width: 100% !important;
+    height: auto !important;
+}
+.container {
+    min-height: 100vh;
+}
+
+.footer-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    max-width: 1593px;
+    margin-left: auto;
+}

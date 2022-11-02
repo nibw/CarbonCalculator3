@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Carbon Calculator</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/lib/AlertifyJS/css/alertify.min.css" rel="stylesheet" />
+    <link href="~/lib/AlertifyJS/css/themes/default.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebSystem</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>*@
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="text-right">
+                <div class="dropdown disable-select">
+                    <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Halo User_login
+                        <i class="fa fa-user-o"></i>
+                    </a>
+                    <div class="dropdown-menu" style="padding:15px;" aria-labelledby="dropdownMenuButton">
+                        <div class="user-info">
+                            <img src="/img/assets/user-img-test.png" />
+                            <h3 class="text-center">user_name<br /><p class="text-center">Pertamina Hulu Rokan</p></h3>
+                        </div>
+                        <hr />
+                        <strong class="dropdown-header">Menu</strong>
+                        @*<a class="dropdown-item" href="#"><i class="fa fa-circle-info"></i> Referensi</a>*@
+                        <label class="menu-item" style="margin:0px;"><i class="fa fa-circle-info"></i> Referensi</label>
+                        <div style="margin-left:20px;">
+                            <a class="dropdown-item" href="#">Benchmark</a>
+                            <a class="dropdown-item" href="#">Donasi Pohon</a>
+                        </div>
+                        <strong class="dropdown-header">Pengaturan</strong>
+                        <a class="dropdown-item" href="#"><i class="fa fa-user-gear"></i> Informasi Akun</a>
+                        <label class="menu-item" href="#"><i class="fa fa-circle-question"></i> Bantuan</label>
+                        <div style="margin-left:20px;">
+                            <a class="dropdown-item" href="#">Petunjuk Penggunaan</a>
+                        </div>
+                        <hr />
+                        <a class="dropdown-item" href="#"><i class="fa fa-right-from-bracket"></i> Keluar</a>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+        </main>
+    </div>
+   <partial name="_footer" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/AlertifyJS/alertify.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

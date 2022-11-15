@@ -15,5 +15,13 @@ namespace WebAPI.Data
         }
 
         public DbSet<Household> Households { get; set; }
+        public DbSet<VehicleType> VehicleTypes { get; set; }
+        public DbSet<VehicleCategory> VehicleCategories { get; set; }
+        public DbSet<Fuel> Fuels { get; set; }
+        public DbSet<Transportation> Transportations { get; set; }
+        public DbSet<CarbonType> CarbonTypes { get; set; }
+        public DbSet<VehicleCapacity> VehicleCapacities { get; set; }
+        public DbSet<VehicleEmision> VehicleEmisions { get; set; }
+        public DbSet<Periode> Periodes { get; set; }
     }
 }

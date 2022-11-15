@@ -44,7 +44,7 @@
     <div class="tab-pane fade show active" id="nav-rumah" role="tabpanel" aria-labelledby="nav-rumah-tab">
         <div class="row" style="margin-top: 50px">
             <div class="col-md-12">
-                <form asp-action="Calculate" method="post">
+                <form asp-action="AddOrEdit" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     @Html.HiddenFor(model => model.HouseholdId)
                     <div class="row">

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Data;
 
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(APIDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221107094526_tblvehicle1")]
+    partial class tblvehicle1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,27 +76,6 @@ namespace WebAPI.Migrations
                     b.HasKey("HouseholdId");
 
                     b.ToTable("TblT_Household");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Periode", b =>
-                {
-                    b.Property<int>("PeriodeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Month")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Year")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("PeriodeId");
-
-                    b.ToTable("Tbl_Periode");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Transportation", b =>
@@ -214,8 +195,6 @@ namespace WebAPI.Migrations
 
                     b.HasIndex("FuelId");
 
-                    b.HasIndex("PeriodeId");
-
                     b.HasIndex("TransportationId");
 
                     b.HasIndex("VehicleCapacitiesCapacityId");
@@ -264,12 +243,6 @@ namespace WebAPI.Migrations
                     b.HasOne("WebAPI.Models.Fuel", "Fuels")
                         .WithMany()
                         .HasForeignKey("FuelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebAPI.Models.Periode", "Periodes")
-                        .WithMany()
-                        .HasForeignKey("PeriodeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

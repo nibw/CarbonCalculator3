@@ -36,34 +36,34 @@ namespace WebSystem.Models
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
 
-        public int KonsumsiListrik()
-        {
-            var konsumsilistrik = Standmeter + 1;
-            return konsumsilistrik;
-        }
+        //public int KonsumsiListrik()
+        //{
+        //    var konsumsilistrik = Standmeter + 1;
+        //    return konsumsilistrik;
+        //}
 
-        public int KonsumsiGas()
-        {
-            var konsumsigas = CityGasConsumption + 1;
-            return konsumsigas;
-        }
+        //public int KonsumsiGas()
+        //{
+        //    var konsumsigas = CityGasConsumption + 1;
+        //    return konsumsigas;
+        //}
 
-        public int EmisiCo2Listrik()
-        {
-            var emisicolistrik = AmountPeople + Standmeter;
-            return emisicolistrik;
-        }
+        //public int EmisiCo2Listrik()
+        //{
+        //    var emisicolistrik = AmountPeople + Standmeter;
+        //    return emisicolistrik;
+        //}
 
-        public int EmisiCo2Gas()
-        {
-            var emisicogas = AmountPeople + LpgConsumption + CityGasConsumption;
-            return emisicogas;
-        }
+        //public int EmisiCo2Gas()
+        //{
+        //    var emisicogas = AmountPeople + LpgConsumption + CityGasConsumption;
+        //    return emisicogas;
+        //}
 
-        public int EmisiCo2Person()
-        {
-            var emisicoperson = AmountPeople + Standmeter + LpgConsumption + CityGasConsumption;
-            return emisicoperson;
-        }
+        //public int EmisiCo2Person()
+        //{
+        //    var emisicoperson = AmountPeople + Standmeter + LpgConsumption + CityGasConsumption;
+        //    return emisicoperson;
+        //}
     }
 }

@@ -32,5 +32,40 @@ namespace WebAPI.Models
 
         [DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
         public DateTime CreatedDate { get; set; }
+        //public int? ElectricityCons { get; set; }
+        //public int? GasCons { get; set; }
+        //public int? ElectricityEmision { get; set; }
+        //public int? GasEmision { get; set; }
+        //public int? PeopleEmision { get; set; }
+
+        //public int KonsumsiListrik()
+        //{
+        //    var konsumsilistrik = Standmeter + 1;
+        //    return konsumsilistrik;
+        //}
+
+        //public int KonsumsiGas()
+        //{
+        //    var konsumsigas = CityGasConsumption + 1;
+        //    return konsumsigas;
+        //}
+
+        //public int EmisiCo2Listrik()
+        //{
+        //    var emisicolistrik = AmountPeople + Standmeter;
+        //    return emisicolistrik;
+        //}
+
+        //public int EmisiCo2Gas()
+        //{
+        //    var emisicogas = AmountPeople + LpgConsumption + CityGasConsumption;
+        //    return emisicogas;
+        //}
+
+        //public int EmisiCo2Person()
+        //{
+        //    var emisicoperson = AmountPeople + Standmeter + LpgConsumption + CityGasConsumption;
+        //    return emisicoperson;
+        //}
     }
 }

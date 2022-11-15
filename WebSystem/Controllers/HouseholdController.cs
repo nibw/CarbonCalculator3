@@ -69,20 +69,31 @@ namespace WebSystem.Controllers
             //}
             //return View();
 
+            //if (household.HouseholdId == 0)
+            //{                
+            //    RedirectToAction("Calculate");
+            //}
+            //else
+            //{
+            //    HttpResponseMessage res = client.PutAsJsonAsync("api/household/" + household.HouseholdId, household).Result;
+            //    TempData["SuccessMessage"] = "Data telah diperbaharui";
+            //}
+            //return RedirectToAction("Index");
+
             if (household.HouseholdId == 0)
-            {                
-                RedirectToAction("Calculate");
+            {
+                HttpResponseMessage res = client.PostAsJsonAsync("api/household", household).Result;
+                TempData["SuccessMessage"] = "Data telah disimpan";
             }
             else
             {
-
                 HttpResponseMessage res = client.PutAsJsonAsync("api/household/" + household.HouseholdId, household).Result;
                 TempData["SuccessMessage"] = "Data telah diperbaharui";
             }
             return RedirectToAction("Index");
 
         }
-        
+
         public async Task<IActionResult> Delete(int id)
         {
             var household = new Household();
@@ -94,27 +105,26 @@ namespace WebSystem.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Calculate(Household household)
-        {
-            HttpClient client = _api.Initial();
+        //public IActionResult Calculate(Household household)
+        //{
+        //    HttpClient client = _api.Initial();
             
-            var konsumsilistrik = household.KonsumsiListrik().ToString();
-            var konsumsigas = household.KonsumsiGas().ToString();
-            var emisicolistrik = household.EmisiCo2Listrik().ToString();
-            var emisicogas = household.EmisiCo2Gas().ToString();
-            var emisicoperson = household.EmisiCo2Person().ToString();
+        //    var konsumsilistrik = household.KonsumsiListrik().ToString();
+        //    var konsumsigas = household.KonsumsiGas().ToString();
+        //    var emisicolistrik = household.EmisiCo2Listrik().ToString();
+        //    var emisicogas = household.EmisiCo2Gas().ToString();
+        //    var emisicoperson = household.EmisiCo2Person().ToString();
 
-            ViewBag.konsumsilistrik = konsumsilistrik;
-            ViewBag.konsumsigas = konsumsigas;
-            ViewBag.emisicolistrik = emisicolistrik;
-            ViewBag.emisicogas = emisicogas;
-            ViewBag.emisicoperson = emisicoperson;
+        //    ViewBag.konsumsilistrik = konsumsilistrik;
+        //    ViewBag.konsumsigas = konsumsigas;
+        //    ViewBag.emisicolistrik = emisicolistrik;
+        //    ViewBag.emisicogas = emisicogas;
+        //    ViewBag.emisicoperson = emisicoperson;
 
-            HttpResponseMessage res = client.PostAsJsonAsync("api/household", household).Result;
-            TempData["SuccessMessage"] = "Data telah disimpan";
             
-            return View();
-        }
+            
+        //    return View();
+        //}
 
     }
 }

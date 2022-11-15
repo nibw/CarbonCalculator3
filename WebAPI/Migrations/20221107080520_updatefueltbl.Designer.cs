@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAPI.Data;
 
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(APIDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221107080520_updatefueltbl")]
+    partial class updatefueltbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,27 +76,6 @@ namespace WebAPI.Migrations
                     b.HasKey("HouseholdId");
 
                     b.ToTable("TblT_Household");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.Periode", b =>
-                {
-                    b.Property<int>("PeriodeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Month")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Year")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("PeriodeId");
-
-                    b.ToTable("Tbl_Periode");
                 });
 
             modelBuilder.Entity("WebAPI.Models.Transportation", b =>
@@ -164,67 +145,6 @@ namespace WebAPI.Migrations
                     b.ToTable("Tbl_VehicleCategory");
                 });
 
-            modelBuilder.Entity("WebAPI.Models.VehicleEmision", b =>
-                {
-                    b.Property<int>("VehicleEmisionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AmountPeople")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CapacityId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("FuelId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Mileage")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("Per")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PeriodeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TransportationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TravelFrequency")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("VehicleCapacitiesCapacityId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VehicleId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("VehicleTypesVehicleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("VehicleEmisionId");
-
-                    b.HasIndex("FuelId");
-
-                    b.HasIndex("PeriodeId");
-
-                    b.HasIndex("TransportationId");
-
-                    b.HasIndex("VehicleCapacitiesCapacityId");
-
-                    b.HasIndex("VehicleTypesVehicleId");
-
-                    b.ToTable("TblT_VehicleEmision");
-                });
-
             modelBuilder.Entity("WebAPI.Models.VehicleType", b =>
                 {
                     b.Property<int>("VehicleId")
@@ -253,35 +173,6 @@ namespace WebAPI.Migrations
                         .HasForeignKey("TransportationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("WebAPI.Models.VehicleType", "VehicleTypes")
-                        .WithMany()
-                        .HasForeignKey("VehicleTypesVehicleId");
-                });
-
-            modelBuilder.Entity("WebAPI.Models.VehicleEmision", b =>
-                {
-                    b.HasOne("WebAPI.Models.Fuel", "Fuels")
-                        .WithMany()
-                        .HasForeignKey("FuelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebAPI.Models.Periode", "Periodes")
-                        .WithMany()
-                        .HasForeignKey("PeriodeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebAPI.Models.Transportation", "Transportations")
-                        .WithMany()
-                        .HasForeignKey("TransportationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebAPI.Models.VehicleCapacity", "VehicleCapacities")
-                        .WithMany()
-                        .HasForeignKey("VehicleCapacitiesCapacityId");
 
                     b.HasOne("WebAPI.Models.VehicleType", "VehicleTypes")
                         .WithMany()

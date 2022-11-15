@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+<style>
+    .date-period {
+        width: 420px;
+        height: 136px;
+        left: 880px;
+        top: 549px;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 60px;
+        align-items: center;
+        color: #1b6ec2;
+    }
+</style>
+<nav>
+    <div class="nav nav-tabs nav-pills nav-justified flex-sm-row" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-periode-tab" data-toggle="tab" href="#nav-periode" role="tab" aria-controls="nav-periode" aria-selected="true">Periode Pelaporan</a>
+        <a class="nav-item nav-link" id="nav-riwayat-tab" data-toggle="tab" href="#nav-riwayat" role="tab" aria-controls="nav-riwayat" aria-selected="false">Riwayat Pelaporan</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+
+    @*periode*@
+    <div class="tab-pane fade show active" id="nav-periode" role="tabpanel" aria-labelledby="nav-periode-tab">
+        <div class="col-md-12">
+            <form action="/" method="post">
+                <div class="row col text-center" style="margin-top: 150px">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input autocomplete="off" type="text" class="form-control" id="datepicker" placeholder="Pilih tanggal" />
+                            @*<span id="tanggal_name">span kiri</span>*@
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h2>Kamu memilih Periode</h2>
+                            <span id="tanggal_name1" class="date-period"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col text-center">
+                        <a class="btn btn-primary" asp-controller="Household" asp-action="Index">selanjutnya</a>
+                        @*<input class="btn btn-primary" type="submit" name="Submit" value="selanjutnya" />*@
+                        @*<input class="btn btn-danger" type="reset" name="Reset" value="Clear" />*@
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @*riwayat*@
+    <div class="tab-pane fade" id="nav-riwayat" role="tabpanel" aria-labelledby="nav-riwayat-tab">
+        <h2 class="text-center">ajax history</h2>
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Extn.</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $(function () {
+            $('#datepicker').datepicker({
+                format: 'MM-yyyy',
+                startView: "months",
+                minViewMode: "months",
+                orientation: "bottom"
+            });
+        });
+
+        $(document).ready(function () {
+            $('#datepicker').on('change', function () {
+                var dateThis = $(this).val();
+                $('#tanggal_name1').text(dateThis);
+            });
+        });
+    </script>
+
+}

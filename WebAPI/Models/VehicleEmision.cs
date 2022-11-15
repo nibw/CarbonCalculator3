@@ -38,7 +38,5 @@ namespace WebAPI.Models
         public int AmountPeople { get; set; }
         public decimal Mileage { get; set; }
         public DateTime CreatedDate { get; set; }
-
-
     }
 }

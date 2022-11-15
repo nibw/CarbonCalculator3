@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Help3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a asp-controller="Home" asp-action="Index"><img src="/img/assets/Back.png" /></a>
+<div class="row">
+    <div class="col-md-6">
+        <div class="imgCol">
+            <img src="/img/assets/picture-help3.png" style="height:360px; width:510px;" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p class="p1">KETIGA</p>
+        <h4>RINGKASAN EMISI KAMU</h4>
+        <p class="text-justify">
+            Di tahap terakhir ini atau langkah ketiga, kamu akan mendapatkan ringkasan dari data yang telah kamu submit sebelumnya menggunakan <strong>Carbon Calculator</strong>.
+        </p>
+        <P class="text-justify">
+            Dimana kamu dapat mengetahui apakah kamu sudah hemat atau sebaliknya status “Merah” membuat kamu perlu mengurangi emisi gas buang yang dihasilkan dengan cara melakukan penghematan energi, mengoptimalkan perjalan menggunakan kendaraan serta menanam pohon atau berdonasi pohon.
+        </P>
+        <div>
+            <a class="btn btn-info float-left" asp-controller="Home" asp-action="Help2">Sebelumnya</a>
+            <a class="btn btn-success float-right" asp-controller="Periode" asp-action="Index">Hitung Emisi</a>
+        </div>
+    </div>
+</div>

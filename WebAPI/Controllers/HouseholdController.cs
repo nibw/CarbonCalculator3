@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest("Not a valid model");
-            household.CreatedDate = DateTime.Now;            
+            household.CreatedDate = DateTime.Now;
             _context.Households.Add(household);
             _context.SaveChanges();
             return Ok();

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Help1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a asp-controller="Home" asp-action="Index"><img src="/img/assets/Back.png" /></a>
+<div class="row">
+    <div class="col-md-6">
+        <div class="imgCol">
+            <img src="/img/assets/picture-help1.png" style="height:606px; width:550px;" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p class="p1">PERTAMA</p>
+        <h4>EMISI YANG DIHASILKAN</h4>
+        <p class="text-justify">
+            Pada saat pertama kali menggunakan <strong>Carbon Calculator</strong>, kamu perlu melakukan penghitungan dari mana saja emisi gas buang dihasilkan. Diantaranya:
+        </p>
+        <div>
+            <P class="text-justify">
+                <strong>1. Tempat tinggal</strong><br />
+                Meliputi konsumsi pemakaian listrik maupun gas.<br />
+                <strong>2. Kendaraan</strong><br />
+                Meliputi jenis kendaraan, jumlah penumpang serta jarak tempuh/ frekuensi.
+            </P>
+        </div>
+        <P class="text-justify">
+            Kemudian serapan karbon berasal dari tanaman yang kamu tanam di sekeliling tempat kamu tinggal (rumah).
+        </P>
+        <div>
+            <a class="btn btn-success float-right" asp-controller="Home" asp-action="Help2">Selanjutnya</a>
+        </div>
+    </div>
+</div>

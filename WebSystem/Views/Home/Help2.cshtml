@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Help2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a asp-controller="Home" asp-action="Index"><img src="/img/assets/Back.png" /></a>
+<div class="row">
+    <div class="col-md-6">
+        <div class="imgCol">
+            <img src="/img/assets/picture-help2.png" style="height:360px; width:510px;" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p class="p1">KEDUA</p>
+        <h4>HITUNG EMISI KAMU</h4>
+        <p class="text-justify">
+            Pada langkah kedua ini, saatnya kamu menghitung besaran emisi karbon serta serapan karbon menggunakan <storng>Carbon Calculator</storng>, pastikan bahwa kamu mengisi kolom yang ada sesuai dengan kondisi saat ini.
+        </p>
+        <P class="text-justify">
+            Sehingga, kamu dapat mengetahui seberapa besar emisi yang kamu hasilkan dari setiap aktivitas yang dilakukan baik saat berada dirumah, berkendara dan berapa besar serapan karbon yang kamu telah lakukan dari setiap tanaman (pohon) yang ditanam.
+        </P>
+        <div>
+            <a class="btn btn-info float-left" asp-controller="Home" asp-action="Help1">Sebelumnya</a>
+            <a class="btn btn-success float-right" asp-controller="Home" asp-action="Help3">Selanjutnya</a>
+        </div>
+    </div>
+</div>

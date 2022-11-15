@@ -28,6 +28,20 @@ namespace WebSystem.Controllers
             return View();
         }
 
+        public IActionResult Help1()
+        {
+            return View();
+        }
+
+        public IActionResult Help2()
+        {
+            return View();
+        }
+        public IActionResult Help3()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
